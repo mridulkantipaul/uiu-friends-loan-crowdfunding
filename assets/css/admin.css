@@ -1,0 +1,105 @@
+/* =========================================================
+   Admin panel styles (extends style.css)
+   ========================================================= */
+.admin-shell { display: flex; min-height: 100vh; }
+.admin-sidebar {
+  width: 230px; background: var(--sidebar-bg); color: var(--sidebar-text);
+  padding: 22px 16px; position: sticky; top: 0; height: 100vh; display:flex; flex-direction:column;
+}
+/* ---- Brand block ---- */
+.admin-brand { display: flex; align-items: center; gap: 11px; padding: 2px 6px 16px; cursor: pointer; transition: opacity .15s; }
+.admin-brand:hover { opacity: .85; }
+.admin-brand:hover .admin-brand-mark { box-shadow: 0 4px 16px rgba(249,115,22,.5); }
+.admin-brand-mark {
+  width: 38px; height: 38px; flex-shrink: 0; border-radius: 11px;
+  background: linear-gradient(135deg, var(--orange), #fb923c);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 16px; box-shadow: 0 4px 12px rgba(249,115,22,.35);
+}
+.admin-brand-text { min-width: 0; }
+.admin-brand-name { color: #fff; font-weight: 800; font-size: 16.5px; line-height: 1.2; letter-spacing: -.2px; }
+.admin-brand-name span { color: var(--orange); }
+.admin-brand-sub {
+  font-size: 10.5px; color: #9a9aa8; margin-top: 2px;
+  letter-spacing: .5px; text-transform: uppercase; font-weight: 600; white-space: nowrap;
+}
+
+/* ---- "Administrator Console" badge (replaces old plain ADMIN PANEL text) ---- */
+.admin-console-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(249,115,22,.12);
+  border: 1px solid rgba(249,115,22,.3);
+  border-radius: 9px; padding: 9px 12px; margin-bottom: 18px;
+  color: var(--orange); font-size: 11.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .4px;
+}
+.admin-console-badge i { font-size: 12px; }
+
+/* ---- Nav ---- */
+.admin-nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.admin-nav a { display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px; font-size: 14px; font-weight: 500; transition: .15s; }
+.admin-nav a i { width: 18px; text-align: center; }
+.admin-nav a span { flex: 1; }
+.admin-nav a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.admin-nav a.active { background: var(--orange); color: #fff; box-shadow: 0 4px 12px rgba(249,115,22,.3); }
+.admin-nav-badge {
+  background: #ef4444; color: #fff; font-size: 10.5px; font-weight: 800;
+  min-width: 19px; height: 19px; padding: 0 6px; border-radius: 20px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.admin-nav a.active .admin-nav-badge { background: rgba(0,0,0,.28); }
+
+/* ---- Signed-in admin identity + footer links ---- */
+.admin-userbox {
+  display: flex; align-items: center; gap: 10px; margin-top: 14px;
+  padding: 10px; border-radius: 11px; background: rgba(255,255,255,.05);
+}
+.admin-userbox img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.admin-userbox-text { min-width: 0; }
+.admin-userbox-text .n { color: #fff; font-size: 12.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.admin-userbox-text .s { font-size: 10.5px; color: #6f6f7d; }
+.admin-logout, .admin-visit {
+  display: flex; align-items: center; gap: 10px; padding: 10px 12px;
+  border-radius: 10px; font-size: 13px; font-weight: 500; color: var(--sidebar-text); margin-top: 4px;
+}
+.admin-logout i, .admin-visit i { width: 16px; text-align: center; }
+.admin-logout:hover { background: rgba(239,68,68,.12); color: #f87171; }
+.admin-visit { font-size: 12px; color: #6f6f7d; }
+.admin-visit:hover { color: #fff; }
+.admin-main { flex: 1; min-width: 0; }
+.admin-topbar { background: #fff; border-bottom: 1px solid var(--border); padding: 18px 28px; display: flex; justify-content: space-between; align-items: center; }
+.admin-topbar h1 { font-size: 18px; margin: 0; }
+.admin-content { padding: 24px 28px; }
+
+.kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 18px; }
+@media (max-width: 1100px) { .kpi-row { grid-template-columns: repeat(2,1fr); } }
+.kpi-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; display: block; color: inherit; transition: .15s; }
+a.kpi-card:hover { border-color: var(--orange); box-shadow: 0 4px 14px rgba(249,115,22,.12); transform: translateY(-1px); }
+/* icon and its meaning side by side */
+.kpi-head { display: flex; align-items: center; gap: 11px; margin-bottom: 12px; }
+.kpi-card .icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+.kpi-title { font-size: 13.5px; font-weight: 700; color: var(--text-dark); line-height: 1.25; }
+.kpi-card .num { font-size: 24px; font-weight: 800; line-height: 1.1; }
+.kpi-card .lbl { font-size: 12.5px; color: var(--text-muted); margin-top: 4px; }
+
+.admin-table-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.admin-table-card .head { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.admin-table-card .head h3 { margin: 0; font-size: 15px; }
+table.admin-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+table.admin-table th { text-align: left; background: #fafafa; color: var(--text-muted); font-weight: 600; padding: 12px 20px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .3px; border-bottom: 1px solid var(--border); }
+table.admin-table td { padding: 13px 20px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+table.admin-table tr:last-child td { border-bottom: none; }
+table.admin-table tr:hover { background: #fafafa; }
+.pill { padding: 4px 10px; border-radius: 20px; font-size: 11.5px; font-weight: 700; display: inline-block; }
+.pill-green { background: #f0fdf4; color: #15803d; }
+.pill-orange { background: #fff7ed; color: #c2410c; }
+.pill-red { background: #fef2f2; color: #b91c1c; }
+.pill-gray { background: #f3f4f6; color: #52525b; }
+.table-actions { display: flex; gap: 8px; }
+.mini-user { display: flex; align-items: center; gap: 10px; }
+.mini-user img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.mini-user .n { font-weight: 600; font-size: 13px; }
+.mini-user .s { font-size: 11.5px; color: var(--text-muted); }
+form.inline { display: inline; }
+.link-btn { background: none; border: none; color: var(--orange); font-weight: 700; font-size: 12.5px; cursor: pointer; padding: 0; }
+.link-btn.danger { color: #dc2626; }

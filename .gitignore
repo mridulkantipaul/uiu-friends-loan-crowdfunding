@@ -1,0 +1,12 @@
+# OS / editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# PRIVATE user uploads (NID photos, campaign documents, report evidence)
+# must NEVER be pushed to GitHub - keep only the folder + its protection file
+uploads/*
+!uploads/.gitkeep
+!uploads/.htaccess
